@@ -7,16 +7,16 @@
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		  <!-- Bootstrap 3.3.6 -->
-		  <link rel="stylesheet" href="<?php echo base_url().'asset'?> /bootstrap/css/bootstrap.min.css">
+		  <link rel="stylesheet" href="<?php echo base_url().'asset'?>/bootstrap/css/bootstrap.min.css">
 		  <!-- Font Awesome -->
 		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 		  <!-- Ionicons -->
 		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 		  <!-- Theme style -->
-		  <link rel="stylesheet" href="<?php echo base_url().'asset'?> /dist/css/AdminLTE.min.css">
+		  <link rel="stylesheet" href="<?php echo base_url().'asset'?>/dist/css/AdminLTE.min.css">
 		  <!-- AdminLTE Skins. Choose a skin from the css/skins
 		       folder instead of downloading all of them to reduce the load. -->
-		  <link rel="stylesheet" href="<?php echo base_url().'asset'?> /dist/css/skins/_all-skins.min.css">
+		  <link rel="stylesheet" href="<?php echo base_url().'asset'?>/dist/css/skins/_all-skins.min.css">
 
 		  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,7 +47,7 @@
 
 		  <header class="main-header">
 		    <!-- Logo -->
-		    <a href="<?php echo base_url().'asset'?> /index2.html" class="logo">
+		    <a href="<?php echo base_url().'asset'?>/index2.html" class="logo">
 		      <!-- mini logo for sidebar mini 50x50 pixels -->
 		      <span class="logo-mini"><b>A</b>LT</span>
 		      <!-- logo for regular state and mobile devices -->
@@ -79,7 +79,7 @@
 		                  <li><!-- start message -->
 		                    <a href="#">
 		                      <div class="pull-left">
-		                        <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+		                        <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 		                      </div>
 		                      <h4>
 		                        Support Team
@@ -150,13 +150,13 @@
 		          <!-- User Account: style can be found in dropdown.less -->
 		          <li class="dropdown user user-menu">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		              <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+		              <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
 		              <span class="hidden-xs"><?php echo $username; ?></span>
 		            </a>
 		            <ul class="dropdown-menu">
 		              <!-- User image -->
 		              <li class="user-header">
-		                <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+		                <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
 		                <p>
 		                  <?php echo $username; ?> - Web Developer
@@ -207,7 +207,7 @@
 		      <!-- Sidebar user panel -->
 		      <div class="user-panel">
 		        <div class="pull-left image">
-		          <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+		          <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 		        </div>
 		        <div class="pull-left info">
 		          <p>Alexander Pierce</p>
@@ -236,8 +236,8 @@
 		            </span>
 		          </a>
 		          <ul class="treeview-menu">
-		            <li><a href="<?php echo base_url().'asset'?> /index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-		            <li><a href="<?php echo base_url().'asset'?> /index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+		            <li><a href="<?php echo base_url().'asset'?>/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+		            <li><a href="<?php echo base_url().'asset'?>/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
 		          </ul>
 		        </li>
 		        <li class="treeview">
@@ -391,7 +391,7 @@
 		            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
 		          </ul>
 		        </li>
-		        <li><a href="<?php echo base_url().'asset'?> /documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+		        <li><a href="<?php echo base_url().'asset'?>/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
 		        <li class="header">LABELS</li>
 		        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
 		        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -655,16 +655,16 @@
 		<!-- ./wrapper -->
 
 		<!-- jQuery 2.2.3 -->
-		<script src="<?php echo base_url().'asset'?> /plugins/jQuery/jquery-2.2.3.min.js"></script>
+		<script src="<?php echo base_url().'asset'?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
 		<!-- Bootstrap 3.3.6 -->
-		<script src="<?php echo base_url().'asset'?> /bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url().'asset'?>/bootstrap/js/bootstrap.min.js"></script>
 		<!-- SlimScroll -->
-		<script src="<?php echo base_url().'asset'?> /plugins/slimScroll/jquery.slimscroll.js"></script>
+		<script src="<?php echo base_url().'asset'?>/plugins/slimScroll/jquery.slimscroll.js"></script>
 		<!-- FastClick -->
-		<script src="<?php echo base_url().'asset'?> /plugins/fastclick/fastclick.js"></script>
+		<script src="<?php echo base_url().'asset'?>/plugins/fastclick/fastclick.js"></script>
 		<!-- AdminLTE App -->
-		<script src="<?php echo base_url().'asset'?> /dist/js/app.js"></script>
+		<script src="<?php echo base_url().'asset'?>/dist/js/app.js"></script>
 		<!-- AdminLTE for demo purposes -->
-		<script src="<?php echo base_url().'asset'?> /dist/js/demo.js"></script>
+		<script src="<?php echo base_url().'asset'?>/dist/js/demo.js"></script>
 	</body>
 </html>
