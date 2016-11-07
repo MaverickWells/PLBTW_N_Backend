@@ -17,7 +17,7 @@ class DB_MODEL extends CI_Model {
 					$session = array('username' => $rows->username, 'role' => $rows->role);
 					$this->session->set_userdata($session);
 
-					header('location:'.base_url().'admin');
+					header('location:'.base_url().'index.php/admin');
 				}
 				else{
 					header('location:'.base_url());

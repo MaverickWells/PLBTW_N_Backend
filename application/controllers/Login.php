@@ -14,7 +14,7 @@ class Login extends CI_Controller {
 			$this->load->view('login_page');
 		}
 		else{
-			header("location:".base_url()."admin");
+			header("location:".base_url()."index.php/admin");
 		}
 		
 	}
