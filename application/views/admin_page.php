@@ -24,6 +24,22 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		  <![endif]-->
+
+		  <?php
+	        	if(isset($_POST['submit'])){
+	        		// $username = $this->input->post('username');
+	        		// $password = $this->input->post('password');
+	        		$this->user_model->CreateUser(
+	        			$this->input->post('username'), 
+	        			$this->input->post('password'),
+	        			$this->input->post('roles')
+	    			);
+
+	        		// if($username == 'admin' && $password=='admin'){
+	        		// 	header('location:'.base_url().'admin');
+	        		// }
+	        	}
+	        ?>
 	</head>
 	<body class="hold-transition skin-blue sidebar-mini">
 		<!-- Site wrapper -->
@@ -135,7 +151,7 @@
 		          <li class="dropdown user user-menu">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		              <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-		              <span class="hidden-xs">Alexander Pierce</span>
+		              <span class="hidden-xs"><?php echo $username; ?></span>
 		            </a>
 		            <ul class="dropdown-menu">
 		              <!-- User image -->
@@ -143,7 +159,7 @@
 		                <img src="<?php echo base_url().'asset'?> /dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
 		                <p>
-		                  Alexander Pierce - Web Developer
+		                  <?php echo $username; ?> - Web Developer
 		                  <small>Member since Nov. 2012</small>
 		                </p>
 		              </li>
@@ -389,47 +405,47 @@
 
 		  <!-- Content Wrapper. Contains page content -->
 		  <div class="content-wrapper">
-		    <!-- Content Header (Page header) -->
-		    <section class="content-header">
-		      <h1>
-		        Blank page
-		        <small>it all starts here</small>
-		      </h1>
-		      <ol class="breadcrumb">
-		        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-		        <li><a href="#">Examples</a></li>
-		        <li class="active">Blank page</li>
-		      </ol>
-		    </section>
+		  	<div class="col-md-6" style="margin-top:10px">
+		  		<div class="box box-info">
+		            <div class="box-header with-border">
+		              <h3 class="box-title">Register User Form</h3>
+		            </div>
+		            <!-- /.box-header -->
+		            <!-- form start -->
+		            <form class="form-horizontal" method="POST" action="">
+		              <div class="box-body">
+		                <div class="form-group">
+		                  <label for="username" class="col-sm-2 control-label">Username</label>
 
-		    <!-- Main content -->
-		    <section class="content">
+		                  <div class="col-sm-5">
+		                    <input type="text" class="form-control" name="username" placeholder="Username">
+		                  </div>
+		                </div>
+		                <div class="form-group">
+		                  <label for="password" class="col-sm-2 control-label">Password</label>
 
-		      <!-- Default box -->
-		      <div class="box">
-		        <div class="box-header with-border">
-		          <h3 class="box-title">Title</h3>
-
-		          <div class="box-tools pull-right">
-		            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-		              <i class="fa fa-minus"></i></button>
-		            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-		              <i class="fa fa-times"></i></button>
-		          </div>
-		        </div>
-		        <div class="box-body">
-		          Start creating your amazing application!
-		        </div>
-		        <!-- /.box-body -->
-		        <div class="box-footer">
-		          Footer
-		        </div>
-		        <!-- /.box-footer-->
-		      </div>
-		      <!-- /.box -->
-
-		    </section>
-		    <!-- /.content -->
+		                  <div class="col-sm-5">
+		                    <input type="password" class="form-control" name="password" placeholder="Password">
+		                  </div>
+		                </div>
+		                <div class="form-group col-sm-8">
+		                  <label>Role</label>
+		                  <select class="form-control" name="roles">
+		                    <option>Admin</option>
+		                    <option>User</option>
+		                    <option>Developer</option>
+		                  </select>
+		                </div>	                
+	              		</div>
+		              <!-- /.box-body -->
+		              <div class="box-footer">
+		                <button type="reset" class="btn btn-default">Cancel</button>
+		                <button type="submit" name="submit" class="btn btn-info pull-right">Submit</button>
+		              </div>
+		              <!-- /.box-footer -->
+		            </form>
+	          	</div>
+		  	</div>	  		
 		  </div>
 		  <!-- /.content-wrapper -->
 

@@ -25,7 +25,8 @@ class Admin extends CI_Controller {
 			header("location:".base_url());
 		}
 		else{
-			$this->load->view('admin_page');
+			$data = array('username' => $session, );
+			$this->load->view('admin_page', $data);
 		}
 		
 	}
