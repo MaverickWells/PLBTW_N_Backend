@@ -5,8 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<head>
 		<meta charset="utf-8">
 		<title>Welcome to CodeIgniter</title>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asset/bootstrap/css/bootstrap.css"?>">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asset/dist/css/AdminLTE.css"?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asset"?>/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asset"?>/dist/css/AdminLTE.css">
 		<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asset/bootstrap/js/bootstrap.js"?>"> -->
 
 		<style type="text/css">
