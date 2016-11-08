@@ -15,4 +15,11 @@ class USER_MODEL extends CI_Model {
 
 		$this->db->insert('user', $data);
 	}
+
+	public function GetAllUser()
+	{
+		$query = $this->db->get('user');
+
+		return $query->result();
+	}
 }
