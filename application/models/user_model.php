@@ -5,7 +5,7 @@ class USER_MODEL extends CI_Model {
 	public function CreateUser($username, $password, $role)
 	{
 		# code...
-		$link = mysqli_connect("localhost", "root", "", "plbtw");
+		$link = mysqli_connect("localhost", "root", "root", "plbtw");
 
 		$data = array(
 			'username' => mysqli_real_escape_string($link, $username),
