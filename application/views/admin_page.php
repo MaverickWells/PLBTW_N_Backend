@@ -33,22 +33,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-
-      <?php
-            if(isset($_POST['submit'])){
-              // $username = $this->input->post('username');
-              // $password = $this->input->post('password');
-              $this->user_model->CreateUser(
-                $this->input->post('username'), 
-                $this->input->post('password'),
-                $this->input->post('roles')
-            );
-
-              // if($username == 'admin' && $password=='admin'){
-              //  header('location:'.base_url().'admin');
-              // }
-            }
-          ?>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <!-- Site wrapper -->
@@ -421,7 +405,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="POST" action="">
+                <form class="form-horizontal" method="POST" action="<?php echo base_url().'index.php/user/insert'?>">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="username" class="col-sm-2 control-label">Username</label>
@@ -485,7 +469,10 @@
     	                		<td><?php echo $user->username ?></td>
     	                		<td><?php echo $user->role ?></td>
                           <td></td>
-                          <td></td>
+                          <td>
+                            <a href="<?php echo base_url().'index.php/user/delete/'.$user->iduser ?>">
+                            <button class="btn btn-danger pull-right">Delete</button></a>
+                          </td>
     	                	</tr>
     	                <?php } ?>
                     </tbody>
