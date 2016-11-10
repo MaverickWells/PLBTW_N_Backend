@@ -45,23 +45,48 @@ class User extends CI_Controller {
 		header("location:".base_url());
 	}
 
-
-// public function CreateUser($username, $password, $role)
-// 	{
-// 		# code...
-// 		$link = mysqli_connect("localhost", "root", "root", "plbtw");
-
-// 		$data = array(
-// 			'username' => mysqli_real_escape_string($link, $username),
-// 			'password' => md5(mysqli_real_escape_string($link, $password)),
-// 			'role' => strtolower(mysqli_real_escape_string($link, $role))
-// 		);
-
-// 		$this->db->insert('user', $data);
-// 	}
 	public function delete($id)
 	{
 		$this->user_model->DeleteUser($id);
 		header("location:".base_url());
+	}
+
+	public function update()
+	{
+		$link = mysqli_connect("localhost", "root", "root", "plbtw");
+		
+		$data = array(
+			'username' => mysqli_real_escape_string($link, $this->input->post('username'))
+		);	
+
+		if(!empty($this->input->post('password'))){
+			$data['password'] = md5(mysqli_real_escape_string($link, $this->input->post('password')));
+		}
+
+		$this->user_model->UpdateUser($data, $this->input->post('iduser'));
+		// var_dump($data);
+		header("location:".base_url());
+	}
+
+	public function edit($id)
+	{
+		$session = $this->session->userdata('username');
+		if(empty($session)){
+			header("location:".base_url());
+		}
+		else{
+			$user = $this->user_model->GetUser($id);
+			$data = array('username' => $session, 
+				'users' => $this->user_model->GetAllUser(),
+				'usern' => $user['username'],
+				'password' => $user['password'],
+				'iduser' => $user['iduser']
+			);
+
+			// var_dump($data['user']);
+
+			$this->load->view('admin_page', $data);
+			//header("location:".base_url());
+		}
 	}
 }

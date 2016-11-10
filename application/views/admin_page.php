@@ -468,10 +468,13 @@
     	                		<td><?php echo $user->iduser ?></td>
     	                		<td><?php echo $user->username ?></td>
     	                		<td><?php echo $user->role ?></td>
-                          <td></td>
+                          <td>
+                            <a href="<?php echo base_url().'index.php/user/edit/'.$user->iduser ?>">
+                            <button class="btn btn-info">Edit</button></a>
+                          </td>
                           <td>
                             <a href="<?php echo base_url().'index.php/user/delete/'.$user->iduser ?>">
-                            <button class="btn btn-danger pull-right">Delete</button></a>
+                            <button class="btn btn-danger">Delete</button></a>
                           </td>
     	                	</tr>
     	                <?php } ?>
@@ -495,6 +498,51 @@
           </div>
           <!-- /.row -->
         <!-- </section>        -->
+
+        <div class="row">
+          <div class="col-md-6" style="margin-top:10px">
+            <div class="box box-info">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Edit User Form</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form class="form-horizontal" method="POST" action="<?php echo base_url().'index.php/user/update'?>">
+                    <div class="box-body">
+                      <?php if(!empty($iduser)){ ?>
+                        <div class="hidden form-group">
+                          <input type="text" class="form-control" name="iduser" value="<?php echo $iduser?>">
+                        </div>
+                      <?php } ?>
+                      <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username</label>
+
+                        <div class="col-sm-8">
+                          <?php if(empty($usern)){ ?>
+                            <input type="text" class="form-control" name="username" placeholder="Username">
+                          <?php } else { ?>
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $usern?>">
+                          <?php } ?>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" name="password" placeholder="Password" value="">
+                        </div>
+                      </div>                                     
+                      </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <button type="submit" name="update" class="btn btn-info pull-right">Update</button>
+                    </div>
+                    <!-- /.box-footer -->
+                  </form>
+                </div>
+          </div>
+        </div>
       </div>
       <!-- /.content-wrapper -->
 
