@@ -28,7 +28,7 @@ class User extends CI_Controller {
 		// 	$data = array('username' => $session, 'users' => $this->user_model->GetAllUser());
 		// 	$this->load->view('admin_page', $data);
 		// }
-		
+
 	}
 
 	public function insert()
@@ -39,10 +39,44 @@ class User extends CI_Controller {
 			'username' => mysqli_real_escape_string($link, $this->input->post('username')),
 			'password' => md5(mysqli_real_escape_string($link, $this->input->post('password'))),
 			'role' => strtolower(mysqli_real_escape_string($link, $this->input->post('roles')))
-		);	
+		);
 
-		$this->user_model->CreateUser($data);
-		header("location:".base_url());
+		$result = $this->user_model->CreateUser($data);
+
+
+		if($result > 0){
+			if($data['role'] == "developer"){
+				$md5 =  md5($data['username'].$data['password']);
+				$sha1 = sha1($md5);
+				$sha256 = hash('sha256', $sha1);
+				$sha512 = hash('sha512', $sha256);
+
+				$api_key_data = array(
+					'iduser' => $this->db->insert_id(),
+					'user_api_key' => $sha512
+			 	);
+
+				$api_key_result = $this->user_model->InsertAPIKEY($api_key_data);
+
+				$data_api_key = array(
+					'api_key' => $sha512,
+					'username' => $data['username']
+				);
+
+				if($api_key_result > 0){
+					$this->load->view('api_key', $data_api_key);
+				}
+				else{
+
+		        }
+			}
+			else {
+				header("location:".base_url());
+			}
+        }
+        else{
+			header("location:".base_url());
+        }
 	}
 
 	public function delete($id)
@@ -54,10 +88,10 @@ class User extends CI_Controller {
 	public function update()
 	{
 		$link = mysqli_connect("localhost", "root", "root", "plbtw");
-		
+
 		$data = array(
 			'username' => mysqli_real_escape_string($link, $this->input->post('username'))
-		);	
+		);
 
 		if(!empty($this->input->post('password'))){
 			$data['password'] = md5(mysqli_real_escape_string($link, $this->input->post('password')));
@@ -76,7 +110,7 @@ class User extends CI_Controller {
 		}
 		else{
 			$user = $this->user_model->GetUser($id);
-			$data = array('username' => $session, 
+			$data = array('username' => $session,
 				'users' => $this->user_model->GetAllUser(),
 				'usern' => $user['username'],
 				'password' => $user['password'],

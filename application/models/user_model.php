@@ -5,6 +5,8 @@ class USER_MODEL extends CI_Model {
 	public function CreateUser($data)
 	{
 		$this->db->insert('user', $data);
+
+		return $this->db->affected_rows();
 	}
 
 	public function GetAllUser()
@@ -25,11 +27,21 @@ class USER_MODEL extends CI_Model {
 	{
 		$this->db->where('iduser', $id);
         $this->db->delete('user');
+
+		$this->db->where('iduser', $id);
+		$this->db->delete('api_key');
 	}
 
 	public function UpdateUser($data, $iduser)
 	{
 		$this->db->where('iduser', $iduser);
 		$this->db->update('user', $data);
+	}
+
+	public function InsertAPIKEY($data)
+	{
+		$this->db->insert('api_key', $data);
+
+		return $this->db->affected_rows();
 	}
 }
