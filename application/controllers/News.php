@@ -64,7 +64,7 @@ class News extends CI_Controller {
 				//
                 // $this->load->view('upload_form', $error);
 
-				var_dump($this->upload->display_errors());
+				//var_dump($this->upload->display_errors());
         }
         else
         {
@@ -75,10 +75,10 @@ class News extends CI_Controller {
 				//var_dump($this->upload->data()['full_path']);
 
 				$data['image'] = $this->upload->data()['full_path'];
-
-				$this->news_model->CreateNews($data);
-				redirect($this->agent->referrer());
         }
+
+		$this->news_model->CreateNews($data);
+		redirect($this->agent->referrer());
 
 		// $this->news_model->CreateNews($data);
 		// redirect($this->agent->referrer());
