@@ -465,12 +465,12 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="userfile" class="col-sm-3 control-label">Image</label>
+                            <label for="image" class="col-sm-3 control-label">Image</label>
 
                             <div class="col-sm-8">
+                              <!-- <input type="file" class="form-control" name="image" size="10"> -->
                               <input type="file" class="form-control" name="image" size="10">
                             </div>
-                          </div>
                           </div>
                           </div>
                         <!-- /.box-body -->
@@ -482,7 +482,160 @@
                       </form>
                     </div>
               </div>
+            <!-- /.col -->
+
+            <!-- <div class="row"> -->
+              <div class="col-md-6" style="">
+                  <?php if(!empty($news_edit)){ ?>
+                <div class="box box-info">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">Edit News Form</h3>
+                      </div>
+                      <!-- /.box-header -->
+                      <!-- form start -->
+
+                          <form class="form-horizontal" method="POST" action="<?php echo base_url().'index.php/news/update/'.$news_edit['id_news']?>" enctype="multipart/form-data">
+                            <div class="box-body">
+                              <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">News Title</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="title" placeholder="Title" value="<?php echo $news_edit['title'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="content" class="col-sm-3 control-label">News Content</label>
+
+                                <div class="col-sm-8">
+                                  <textarea name="content" rows="15" cols="40" placeholder="Content" class="form-control"><?php echo $news_edit['content'] ?></textarea>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="category" class="col-sm-3 control-label">Category</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="category" placeholder="Category" value="<?php echo $news_edit['category'] ?>">
+                                </div>
+                              </div>
+                               <div class="form-group">
+                                <label for="sub-category" class="col-sm-3 control-label">Sub Category</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="sub-category" placeholder="Sub Category" value="<?php echo $news_edit['sub_category'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="location" class="col-sm-3 control-label">Location</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="location" placeholder="Location" value="<?php echo $news_edit['location'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="ori_site" class="col-sm-3 control-label">Original Site</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="ori_site" placeholder="Original Site" value="<?php echo $news_edit['news_web'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="ori_url" class="col-sm-3 control-label">Original URL</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="ori_url" placeholder="Original URL" value="<?php echo $news_edit['news_url'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="keyword" class="col-sm-3 control-label">Keyword</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="keyword" placeholder="Keyword" value="<?php echo $news_edit['keyword'] ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="image" class="col-sm-3 control-label">Image</label>
+
+                                <div class="col-sm-8">
+                                  <input type="file" class="form-control" name="image" size="10">
+                                </div>
+                              </div>
+                              </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                              <button type="reset" class="btn btn-default">Cancel</button>
+                              <button type="submit" name="submit" class="btn btn-info pull-right">Submit</button>
+                            </div>
+                            <!-- /.box-footer -->
+                          </form>
+
+                    </div>
+                    <?php } ?>
+              </div>
+            <!-- </div> -->
+
           </div>
+
+
+
+          <div class="row">
+              <div class="col-md-12" style="margin_top:25px">
+                <div class="box box-info">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">News List</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <table id="NewsListTable" class="table table-bordered table-striped">
+                      <thead>
+                      <tr>
+                        <th>News Title</th>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Location</th>
+                        <th>News Web</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($news as $news_data) { ?>
+      	                	<tr>
+      	                		<td><?php echo $news_data->title ?></td>
+      	                		<td><?php echo $news_data->category ?></td>
+      	                		<td><?php echo $news_data->sub_category ?></td>
+                                <td><?php echo $news_data->location ?></td>
+                                <td><?php echo $news_data->news_web ?></td>
+                            <td>
+                              <a href="<?php echo base_url().'index.php/news/edit/'.$news_data->id_news ?>">
+                              <button class="btn btn-info">Edit</button></a>
+                            </td>
+                            <td>
+                              <a href="<?php echo base_url().'index.php/news/delete/'.$news_data->id_news ?>">
+                              <button class="btn btn-danger">Delete</button></a>
+                            </td>
+      	                	</tr>
+      	                <?php } ?>
+                      </tbody>
+                      <tfoot>
+                      <tr>
+                          <th>News Title</th>
+                          <th>Category</th>
+                          <th>Sub Category</th>
+                          <th>Location</th>
+                          <th>News Web</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                      </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+          </div>
+
+
       </div>
       <!-- /.content-wrapper -->
 

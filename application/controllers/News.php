@@ -25,7 +25,7 @@ class News extends CI_Controller {
 			header("location:".base_url());
 		}
 		else{
-			$data = array('username' => $session, 'users' => $this->user_model->GetAllUser());
+			$data = array('username' => $session, 'news' => $this->news_model->GetAllNews());
 			$this->load->view('news_page', $data);
 		}
 
@@ -121,46 +121,80 @@ class News extends CI_Controller {
 
 	public function delete($id)
 	{
-		// $this->user_model->DeleteNews($id);
+		$this->news_model->DeleteNews($id);
 		// header("location:".base_url());
+		redirect($this->agent->referrer());
 	}
 
-	public function update()
+	public function update($id)
 	{
-		// $link = mysqli_connect("localhost", "root", "root", "plbtw");
+		$link = mysqli_connect("localhost", "root", "root", "plbtw");
+
+		$data = array(
+			'title' => mysqli_real_escape_string($link, $this->input->post('title')),
+			'content' => mysqli_real_escape_string($link, $this->input->post('content')),
+			'category' => mysqli_real_escape_string($link, $this->input->post('category')),
+			'sub_category' => mysqli_real_escape_string($link, $this->input->post('sub-category')),
+			'location' => mysqli_real_escape_string($link, $this->input->post('location')),
+			'news_web' => mysqli_real_escape_string($link, $this->input->post('ori_site')),
+			'news_url' => mysqli_real_escape_string($link, $this->input->post('ori_url')),
+			'keyword' => mysqli_real_escape_string($link, $this->input->post('keyword')),
+		);
+
+		if ($this->upload->do_upload('image'))
+        {
+                // $error = array('error' => $this->upload->display_errors());
+				//
+                // $this->load->view('upload_form', $error);
+
+				// var_dump($this->upload->display_errors());
+				$data['image'] = $this->upload->data()['full_path'];
+        }
+        // else
+        // {
+        //         // $data = array('upload_data' => $this->upload->data());
+		// 		//
+        //         // $this->load->view('upload_success', $data);
 		//
-		// $data = array(
-		// 	'username' => mysqli_real_escape_string($link, $this->input->post('username'))
-		// );
+		// 		//var_dump($this->upload->data()['full_path']);
 		//
+		// 		$data['image'] = $this->upload->data()['full_path'];
+		//
+		// 		$this->news_model->CreateNews($data);
+		// 		redirect($this->agent->referrer());
+        // }
+
 		// if(!empty($this->input->post('password'))){
 		// 	$data['password'] = md5(mysqli_real_escape_string($link, $this->input->post('password')));
 		// }
-		//
-		// $this->user_model->UpdateNews($data, $this->input->post('iduser'));
-		// // var_dump($data);
-		// header("location:".base_url());
+
+		// var_dump($_FILES['image']);
+
+		$this->news_model->UpdateNews($data, $id);
+		// redirect($this->agent->referrer());
+		// var_dump($data);
+		header("location:".base_url());
 	}
 
 	public function edit($id)
 	{
-		// $session = $this->session->userdata('username');
-		// if(empty($session)){
-		// 	header("location:".base_url());
-		// }
-		// else{
-		// 	$user = $this->user_model->GetUser($id);
-		// 	$data = array('username' => $session,
-		// 		'users' => $this->user_model->GetAllUser(),
-		// 		'usern' => $user['username'],
-		// 		'password' => $user['password'],
-		// 		'iduser' => $user['iduser']
-		// 	);
-		//
-		// 	// var_dump($data['user']);
-		//
-		// 	$this->load->view('admin_page', $data);
-		// 	//header("location:".base_url());
-		// }
+		$session = $this->session->userdata('username');
+		if(empty($session)){
+			header("location:".base_url());
+		}
+		else{
+			// $news = $this->news_model->GetNews($id);
+			$data = array(
+				'username' => $session,
+				'news' => $this->news_model->GetAllNews(),
+				'news_edit' => $this->news_model->GetNews($id)
+			);
+
+			//  var_dump($data);
+			//  print("<pre>".print_r($data,true)."</pre>");
+
+			$this->load->view('news_page', $data);
+			//header("location:".base_url());
+		}
 	}
 }
