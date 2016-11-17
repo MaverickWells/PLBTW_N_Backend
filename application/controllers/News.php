@@ -77,10 +77,8 @@ class News extends CI_Controller {
 				$data['image'] = base_url().substr($this->upload->data()['full_path'], 30);
         }
 
-		var_dump($data);
-
-		//$this->news_model->CreateNews($data);
-		//redirect($this->agent->referrer());
+		$this->news_model->CreateNews($data);
+		redirect($this->agent->referrer());
 
 		// $this->news_model->CreateNews($data);
 		// redirect($this->agent->referrer());
