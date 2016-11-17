@@ -74,7 +74,9 @@ class News extends CI_Controller {
 
 				//var_dump($this->upload->data()['full_path']);
 // C:\Microsoft\Workspace
-				$data['image'] = base_url().substr($this->upload->data()['full_path'], 30);
+				$index = stripos($this->upload->data()['full_path'], "d/") + 2;
+				$data['image'] = base_url().substr($this->upload->data()['full_path'], $index);
+				// var_dump($data);
         }
 
 		$this->news_model->CreateNews($data);
