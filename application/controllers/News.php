@@ -177,7 +177,7 @@ class News extends CI_Controller {
 		$this->news_model->UpdateNews($data, $id);
 		// redirect($this->agent->referrer());
 		// var_dump($data);
-		header("location:".base_url());
+		header("location:".base_url()."index.php/news");
 	}
 
 	public function edit($id)

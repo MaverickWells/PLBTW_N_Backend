@@ -4,7 +4,7 @@
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>AdminLTE 2 | User Page</title>
+      <title>PLBTW Backend | News Page</title>
       <!-- Tell the browser to be responsive to screen width -->
       <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
       <!-- Bootstrap 3.3.6 -->
@@ -42,9 +42,9 @@
         <!-- Logo -->
         <a href="<?php echo base_url().'asset'?>/index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
+          <span class="logo-mini"><b>PL</b>A</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
+          <span class="logo-lg"><b>PLBTW</b>Admin</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -59,7 +59,7 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-              <li class="dropdown messages-menu">
+              <!-- <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
                   <span class="label label-success">4</span>
@@ -67,9 +67,9 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 4 messages</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    <!-- inner menu: contains the actual data
                     <ul class="menu">
-                      <li><!-- start message -->
+                      <li><!-- start message
                         <a href="#">
                           <div class="pull-left">
                             <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -81,14 +81,14 @@
                           <p>Why not buy a new awesome theme?</p>
                         </a>
                       </li>
-                      <!-- end message -->
+                      <!-- end message
                     </ul>
                   </li>
                   <li class="footer"><a href="#">See All Messages</a></li>
                 </ul>
-              </li>
+              </li> -->
               <!-- Notifications: style can be found in dropdown.less -->
-              <li class="dropdown notifications-menu">
+              <!-- <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning">10</span>
@@ -96,7 +96,7 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 10 notifications</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    <!-- inner menu: contains the actual data
                     <ul class="menu">
                       <li>
                         <a href="#">
@@ -107,9 +107,9 @@
                   </li>
                   <li class="footer"><a href="#">View all</a></li>
                 </ul>
-              </li>
+              </li> -->
               <!-- Tasks: style can be found in dropdown.less -->
-              <li class="dropdown tasks-menu">
+              <!-- <li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
                   <span class="label label-danger">9</span>
@@ -117,9 +117,9 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 9 tasks</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    <!-- inner menu: contains the actual data
                     <ul class="menu">
-                      <li><!-- Task item -->
+                      <li><!-- Task item
                         <a href="#">
                           <h3>
                             Design some buttons
@@ -132,14 +132,14 @@
                           </div>
                         </a>
                       </li>
-                      <!-- end task item -->
+                      <!-- end task item
                     </ul>
                   </li>
                   <li class="footer">
                     <a href="#">View all tasks</a>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -152,12 +152,12 @@
                     <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                      <?php echo $username; ?> - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      <?php echo $username; ?>
+                      <!-- <small>Member since Nov. 2012</small> -->
                     </p>
                   </li>
                   <!-- Menu Body -->
-                  <li class="user-body">
+                  <!-- <li class="user-body">
                     <div class="row">
                       <div class="col-xs-4 text-center">
                         <a href="#">Followers</a>
@@ -169,12 +169,12 @@
                         <a href="#">Friends</a>
                       </div>
                     </div>
-                    <!-- /.row -->
-                  </li>
+                    <!-- /.row
+                  </li> -->
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <!-- <a href="#" class="btn btn-default btn-flat">Profile</a> -->
                     </div>
                     <div class="pull-right">
                       <a href="<?php echo base_url()."index.php/logout" ?>" class="btn btn-default btn-flat">Sign out</a>
@@ -184,7 +184,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <!-- <a href="#" data-tofggle="control-sidebar"><i class="fa fa-gears"></i></a> -->
               </li>
             </ul>
           </div>
@@ -198,7 +198,7 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-          <div class="user-panel">
+          <!-- <div class="user-panel">
             <div class="pull-left image">
               <img src="<?php echo base_url().'asset'?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
@@ -206,9 +206,9 @@
               <p>Alexander Pierce</p>
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
-          </div>
+          </div> -->
           <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
+          <!-- <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search...">
                   <span class="input-group-btn">
@@ -216,24 +216,24 @@
                     </button>
                   </span>
             </div>
-          </form>
+          </form> -->
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                <i class="fa fa-dashboard"></i> <span>Menu</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url().'asset'?>/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="<?php echo base_url().'asset'?>/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                <li><a href="<?php echo base_url()?>index.php/admin"><i class="fa fa-circle-o"></i> User</a></li>
+                <li><a href="<?php echo base_url()?>index.php/news"><i class="fa fa-circle-o"></i> News</a></li>
               </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>Layout Options</span>
@@ -388,7 +388,7 @@
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
           </ul>
         </section>
         <!-- /.sidebar -->
