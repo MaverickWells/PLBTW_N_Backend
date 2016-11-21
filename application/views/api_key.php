@@ -416,7 +416,7 @@
                       <div class="modal-body">
                         <p>Please Note Below Data Carefully</p>
                         <p>Username : <?php echo $username ?></p>
-                        <p>API KEY : <?php echo $api_key ?></p>
+                        <p style="word-wrap: break-word">API KEY : <?php echo $api_key ?></p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal" onclick="BackToHomePage();">Close</button>

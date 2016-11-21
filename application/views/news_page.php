@@ -416,6 +416,13 @@
                             </div>
                           </div>
                           <div class="form-group">
+                            <label for="date" class="col-sm-3 control-label">News Date</label>
+
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="date" placeholder="Date">
+                            </div>
+                          </div>
+                          <div class="form-group">
                             <label for="content" class="col-sm-3 control-label">News Content</label>
 
                             <div class="col-sm-8">
@@ -504,6 +511,13 @@
                                 </div>
                               </div>
                               <div class="form-group">
+                                <label for="date" class="col-sm-3 control-label">Date</label>
+
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" name="date" placeholder="Date" value="<?php echo date_format(date_create($news_edit['date']), 'd F Y') ?>">
+                                </div>
+                              </div>
+                              <div class="form-group">
                                 <label for="content" class="col-sm-3 control-label">News Content</label>
 
                                 <div class="col-sm-8">
@@ -589,6 +603,7 @@
                       <thead>
                       <tr>
                         <th>News Title</th>
+                        <th>Date</th>
                         <th>Category</th>
                         <th>Sub Category</th>
                         <th>Location</th>
@@ -601,6 +616,7 @@
                         <?php foreach ($news as $news_data) { ?>
       	                	<tr>
       	                		<td><?php echo $news_data->title ?></td>
+                                <td><?php echo date_format(date_create($news_data->date), 'd F Y') ?></td>
       	                		<td><?php echo $news_data->category ?></td>
       	                		<td><?php echo $news_data->sub_category ?></td>
                                 <td><?php echo $news_data->location ?></td>
@@ -619,6 +635,7 @@
                       <tfoot>
                       <tr>
                           <th>News Title</th>
+                          <th>Date</th>
                           <th>Category</th>
                           <th>Sub Category</th>
                           <th>Location</th>
