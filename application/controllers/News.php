@@ -36,9 +36,9 @@ class News extends CI_Controller {
 		$link = mysqli_connect("localhost", "root", "root", "plbtw");
 
 		$data = array(
-			'title' => mysqli_real_escape_string($link, $this->input->post('title')),
+			'title' => $this->input->post('title'),
 			'date' => mysqli_real_escape_string($link, date_format(date_create($this->input->post('date')), 'Y-m-d')),
-			'content' => mysqli_real_escape_string($link, $this->input->post('content')),
+			'content' => $this->input->post('content'),
 			'category' => mysqli_real_escape_string($link, $this->input->post('category')),
 			'sub_category' => mysqli_real_escape_string($link, $this->input->post('sub-category')),
 			'location' => mysqli_real_escape_string($link, $this->input->post('location')),
@@ -134,9 +134,9 @@ class News extends CI_Controller {
 		$link = mysqli_connect("localhost", "root", "root", "plbtw");
 
 		$data = array(
-			'title' => mysqli_real_escape_string($link, $this->input->post('title')),
+			'title' => $this->input->post('title'),
 			'date' => mysqli_real_escape_string($link, date_format(date_create($this->input->post('date')), 'Y-m-d')),
-			'content' => mysqli_real_escape_string($link, $this->input->post('content')),
+			'content' => $this->input->post('content'),
 			'category' => mysqli_real_escape_string($link, $this->input->post('category')),
 			'sub_category' => mysqli_real_escape_string($link, $this->input->post('sub-category')),
 			'location' => mysqli_real_escape_string($link, $this->input->post('location')),
